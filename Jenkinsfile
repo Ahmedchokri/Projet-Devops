@@ -3,7 +3,7 @@ agent any
 stages {
 stage("Build") {
 steps {
-sh "mvn compile"
+sh "mvn - f ("//var//lib//jenkins//workspace//testdevops//Spring//pom.xml") compile"
 }
 }
 stage("Unit tests") {
