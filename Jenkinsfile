@@ -1,19 +1,14 @@
 pipeline {
 agent any
 stages {
-stage('Cloning Project from Git') {
-steps {
-echo 'hey'
-}
-}
 stage("Build") {
 steps {
-echo 'hey'
+bat "mvn compile"
 }
 }
 stage("Unit tests") {
 steps {
-echo 'hey'
+bat "mvn test"
 
 }}
 }
