@@ -3,12 +3,12 @@ agent any
 stages {
 stage("Build") {
 steps {
-bat "mvn compile"
+sh "mvn compile"
 }
 }
 stage("Unit tests") {
 steps {
-bat "mvn test"
+sh "mvn test"
 
 }}
 }
