@@ -1,11 +1,20 @@
 pipeline {
 agent any
 stages {
-stage('Cloning Project from Git') {steps { git clone 'https://github.com/Ahmedchokri/Projet-Devops.git'
-sh "chmod +x -R ./jenkins"
-sh "./jenkins/script/scripted_pipeline_es_2.sh"
+stage('Cloning Project from Git') {
+steps {
+echo 'hey'
+}
+}
+stage("Build") {
+steps {
+echo 'hey'
+}
+}
+stage("Unit tests") {
+steps {
+echo 'hey'
+
 }}
-stage("Build") {steps {bat "mvn compile"}}
-stage("Unit tests") {steps {bat "mvn test"}}
 }
 }
