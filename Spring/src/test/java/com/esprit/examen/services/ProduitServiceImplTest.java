@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -105,5 +105,4 @@ public class ProduitServiceImplTest {
 		produitService.deleteProduit(produit.getIdProduit());
 
 	}*/
-
 }
