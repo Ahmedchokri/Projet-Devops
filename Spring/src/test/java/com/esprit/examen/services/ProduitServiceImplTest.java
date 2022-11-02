@@ -1,5 +1,5 @@
 package com.esprit.examen.services;
-
+/*
 import static org.hamcrest.CoreMatchers.any;
 import static org.junit.Assert.*;
 
@@ -26,12 +26,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.esprit.examen.entities.Produit;
 import com.esprit.examen.entities.Stock;
 import com.esprit.examen.repositories.StockRepository;
-
+/*
 import lombok.extern.slf4j.Slf4j;
-@RunWith(MockitoJUnitRunner.class)
+///@RunWith(MockitoJUnitRunner.class)
 ///@SpringBootTest
 @Slf4j
-@ExtendWith(MockitoExtension.class)
+///@ExtendWith(MockitoExtension.class)
 public class ProduitServiceImplTest {
 	@Autowired
 	IProduitService produitService;
@@ -101,4 +101,4 @@ public class ProduitServiceImplTest {
 		produitService.deleteProduit(produit.getIdProduit());
 
 	}*/
-}
+
