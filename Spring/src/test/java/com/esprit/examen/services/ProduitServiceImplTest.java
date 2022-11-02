@@ -10,17 +10,17 @@ import java.util.List;
 import java.util.Optional;
 
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.esprit.examen.entities.Produit;
@@ -28,7 +28,7 @@ import com.esprit.examen.entities.Stock;
 import com.esprit.examen.repositories.StockRepository;
 
 import lombok.extern.slf4j.Slf4j;
-@RunWith(SpringRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
 @Slf4j
 @ExtendWith(MockitoExtension.class)
@@ -88,6 +88,7 @@ public class ProduitServiceImplTest {
 		produitService.deleteProduit(produit.getIdProduit());
 		assertNull(produitService.retrieveProduit(produit.getIdProduit()));
 	}
+	/*
 	@Test
 	public void testassignProduitToStock()  throws ParseException {
 		StockRepository stockrepo = Mockito.mock(StockRepository.class);
@@ -99,10 +100,10 @@ public class ProduitServiceImplTest {
 		Produit p = new Produit("ABCD","A145S",150,dateCreation,dateDerniereModification);
 		Produit produit = produitService.addProduit(p);
 
-	///	produitService.assignProduitToStock(produit.getIdProduit(),stockServiceImpl.retrieveStock((long)2).getIdStock() );
+	    produitService.assignProduitToStock(produit.getIdProduit(),stockServiceImpl.retrieveStock((long)2).getIdStock() );
 		assertNotNull(produit.getIdProduit());
 		produitService.deleteProduit(produit.getIdProduit());
 
-	}
+	}*/
 
 }
