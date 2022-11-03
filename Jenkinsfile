@@ -1,4 +1,13 @@
 pipeline {
+environment {
+
+      registry = "ahmedchokri/Spring"
+
+      registryCredential = 'ahmedchokri'
+
+      dockerImage = ''
+
+  }
 agent any
 stages {
 stage("Build") {
