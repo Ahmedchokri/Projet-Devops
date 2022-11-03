@@ -13,7 +13,7 @@ sh " mvn -f  /var/lib/jenkins/workspace/uu/Spring/pom.xml test"
 }}
 stage("Nexus") {
 steps {
-sh " mvn -f /var/lib/jenkins/workspace/uu/Spring/pom.xml clean package deploy:deploy-file -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.100.170:8081/repository/maven-releases/ -Dfile=target/tpAchatProject-1.0.jar"
+sh " mvn -f /var/lib/jenkins/workspace/uu/Spring/pom.xml clean package deploy:deploy-file -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.100.170:9003/repository/maven-releases/ -Dfile=target/tpAchatProject-1.0.jar"
 
 }}
 stage("Sonar") {
