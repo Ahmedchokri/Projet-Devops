@@ -18,7 +18,7 @@ sh " mvn -f /var/lib/jenkins/workspace/uu/Spring/pom.xml clean package deploy:de
 }}
 stage("Sonar") {
 steps {
-sh " mvn  -f /var/lib/jenkins/workspace/uu/Spring/pom.xml clean sonar:sonar -Dsonar.projectKey=test -Dsonar.host.url=http://192.168.100.170:9000 -Dsonar.login=deadd25fab00777ef14b0a4bbc057b3a8921f4d6"
+sh " mvn  -f /var/lib/jenkins/workspace/uu/Spring/pom.xml clean sonar:sonar -Dsonar.projectKey=test -Dsonar.host.url=http://192.168.100.170:9000 -Dsonar.java.binaries=target/classes -Dsonar.login=deadd25fab00777ef14b0a4bbc057b3a8921f4d6"
 
 
 }}
