@@ -22,9 +22,9 @@ sh " mvn  -f /var/lib/jenkins/workspace/uu/Spring/pom.xml clean install sonar:so
 
 
 }}
-stage('Building our image with docker-compose') {
+stage('Building image docker-compose') {
           steps {
-              sh "docker-compose up"
+              sh "docker-compose up -d"
           }
       }
 }
