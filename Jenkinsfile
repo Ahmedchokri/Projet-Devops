@@ -27,5 +27,12 @@ stage('Building image docker-compose') {
               sh "docker-compose up -d"
           }
       }
+stage('Deploy our image') {
+         steps {
+              withDockerRegistry([ credentialsId: "ahmedchokri", url: "" ]) {
+
+            sh "docker push ahmedchokri/Spring:${BUILD_NUMBER}"
+         }}
+     }
 }
 }
