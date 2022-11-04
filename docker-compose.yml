@@ -9,7 +9,7 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_DATABASE=test
     ports:
-      - "5000:5000"
+      - "3306:2000"
     volumes:
       - db:/var/lib/mysql
   app:
@@ -21,7 +21,7 @@ services:
       - "8089:8089"
     environment:
       SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:mysql://mysqldb:5000/test?useSSL=false",
+        "spring.datasource.url"  : "jdbc:mysql://mysqldb:2000/test?useSSL=false",
         "spring.datasource.username" : "root",
         "spring.datasource.password" : "",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
