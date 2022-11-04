@@ -14,7 +14,7 @@ sh " mvn -f  /var/lib/jenkins/workspace/uu/Spring/pom.xml compile"
 stage('Building image docker-compose') {
           steps {
           sh "npm --prefix /var/lib/jenkins/workspace/uu/Angular/ install"
-          sh "npm --prefix /var/lib/jenkins/workspace/uu/Angular/ build"
+          sh "npm --prefix /var/lib/jenkins/workspace/uu/Angular/ run build"
               sh "docker-compose up -d"
           }
       }
