@@ -42,7 +42,6 @@ public class StockServiceImpl implements IStockService {
 
 	@Override
 	public void deleteStock(Long stockId) {
-		log.info("In method deleteStock");
 		stockRepository.deleteById(stockId);
 
 	}
