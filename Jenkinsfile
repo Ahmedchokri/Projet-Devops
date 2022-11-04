@@ -25,6 +25,8 @@ sh " mvn  -f /var/lib/jenkins/workspace/uu/Spring/pom.xml clean install sonar:so
 }}
 stage('Building image docker-compose') {
           steps {
+          sh "npm install"
+          sh "ng serve"
               sh "docker-compose up -d"
           }
       }
