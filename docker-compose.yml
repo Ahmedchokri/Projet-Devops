@@ -29,6 +29,10 @@ services:
       }'
     stdin_open: true
     tty: true
+  frontend:
+    build: "Angular"
+    ports:
+      - "4100:4100"  
 
 volumes:
   db:
