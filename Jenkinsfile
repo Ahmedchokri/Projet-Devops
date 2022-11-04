@@ -40,5 +40,10 @@ stage('Cleaning up') {
             sh "docker rmi uu_app"
          }
      }
+     stage("Email"){
+           steps{
+               emailext attachLog: true, body: "${env.BUILD_URL} has result ${currentBuild.result}", compressLog: true, subject: "Status of pipeline: ${currentBuild.fullDisplayName}", to: 'ahmed.chokri@esprit.tn'
+           }
+       }
 }
 }
