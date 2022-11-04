@@ -31,7 +31,8 @@ stage('Building image docker-compose') {
 stage('Deploy our image') {
          steps {
               withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-              sh "docker push ahmedchokri/uu_app:latest"
+              sh "docker tag uu_app ahmedchokri/uu_app:uu_app"
+              sh "docker push ahmedchokri/uu_app:uu_app"
          }}
      }
 }
