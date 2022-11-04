@@ -1,13 +1,5 @@
 pipeline {
-environment {
 
-      registry = "ahmedchokri/Spring"
-
-      registryCredential = 'ahmedchokri'
-
-      dockerImage = ''
-
-  }
 agent any
 stages {
 stage("Build") {
@@ -39,8 +31,7 @@ stage('Building image docker-compose') {
 stage('Deploy our image') {
          steps {
               withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-
-            sh "docker push ahmedchokri/uu_app:${BUILD_NUMBER}"
+              sh "docker push ahmedchokri/uu_app:latest"
          }}
      }
 }
