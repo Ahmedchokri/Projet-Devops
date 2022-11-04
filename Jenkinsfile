@@ -40,7 +40,7 @@ stage('Deploy our image') {
          steps {
               withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
 
-            sh "docker push ahmedchokri/uu_app_1:${BUILD_NUMBER}"
+            sh "docker push ahmedchokri/uu_app:${BUILD_NUMBER}"
          }}
      }
 }
