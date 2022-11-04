@@ -5,6 +5,11 @@ tools{
 nodejs '14.17.6'
 }
 stages {
+stage("Build") {
+steps {
+sh " mvn -f  /var/lib/jenkins/workspace/uu/Spring/pom.xml compile"
+}
+}
 stage("Unit tests") {
 steps {
 sh " mvn -f  /var/lib/jenkins/workspace/uu/Spring/pom.xml test"
@@ -21,13 +26,6 @@ sh " mvn  -f /var/lib/jenkins/workspace/uu/Spring/pom.xml clean install sonar:so
 
 
 }}
-
-stage("Build") {
-steps {
-sh " mvn -f  /var/lib/jenkins/workspace/uu/Spring/pom.xml compile"
-}
-}
-
 stage('Building image docker-compose') {
           steps {
           sh "npm --prefix /var/lib/jenkins/workspace/uu/Angular/ install"
