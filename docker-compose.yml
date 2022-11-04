@@ -9,7 +9,7 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_DATABASE=test
     ports:
-      - "3307:2000"
+      - "3306:2000"
     volumes:
       - db:/var/lib/mysql
   app:
