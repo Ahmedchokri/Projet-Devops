@@ -35,5 +35,10 @@ stage('Deploy our image') {
               sh "docker push ahmedchokri/uu_app:uu_app"
          }}
      }
+stage('Cleaning up') {
+         steps {
+            sh "docker rmi ahmedchokri/uu_app:${BUILD_NUMBER}"
+         }
+     }
 }
 }
