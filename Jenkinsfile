@@ -37,7 +37,7 @@ stage('Deploy our image') {
      }
 stage('Cleaning up') {
          steps {
-            sh "docker rmi ahmedchokri/uu_app"
+            sh "docker rmi uu_app"
          }
      }
 }
