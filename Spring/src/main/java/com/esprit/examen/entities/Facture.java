@@ -34,7 +34,7 @@ public class Facture implements Serializable {
 	private Date dateCreationFacture;
 	@Temporal(TemporalType.DATE)
 	private Date dateDerniereModificationFacture;
-	private Boolean archivee;
+	private Boolean archive;
 	@OneToMany(mappedBy = "facture")
 	private Set<DetailFacture> detailsFacture;
     @ManyToOne
