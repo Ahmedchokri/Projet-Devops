@@ -13,16 +13,21 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class StockServiceImpl implements IStockService {
-	
 	@Autowired
 	StockRepository stockRepository;
 
+
+
+	public StockServiceImpl(StockRepository stockRepository) {
+		super();
+		this.stockRepository = stockRepository;
+	}
 
 	@Override
 	public List<Stock> retrieveAllStocks() {
 		// récuperer la date à l'instant t1
 		log.info("In method retrieveAllStocks");
-		List<Stock> stocks = (List<Stock>) stockRepository.findAll();
+		List<Stock> stocks = (List<Stock>) this.stockRepository.findAll();
 		for (Stock stock : stocks) {
 			log.info(" Stock : " + stock);
 		}
@@ -56,7 +61,7 @@ public class StockServiceImpl implements IStockService {
 	public Stock retrieveStock(Long stockId) {
 		long start = System.currentTimeMillis();
 		log.info("In method retrieveStock");
-		Stock stock = stockRepository.findById(stockId).orElse(null);
+		Stock stock = this.stockRepository.findById(stockId).get();
 		log.info("out of method retrieveStock");
 		 long elapsedTime = System.currentTimeMillis() - start;
 		log.info("Method execution time: " + elapsedTime + " milliseconds.");
