@@ -38,7 +38,7 @@ stage('Deploy our image') {
               sh "docker tag uu_app ahmedchokri/uu_app:uu_app"
               sh "docker push ahmedchokri/uu_app:uu_app"
               sh "docker tag uu_app ahmedchokri/uu_frontend:uu_frontend"
-              sh "docker push ahmedchokri/uu_app:uu_frontend"
+              sh "docker push ahmedchokri/uu_frontend:uu_frontend"
          }}
      }
 stage('Cleaning up') {
