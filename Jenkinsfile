@@ -28,6 +28,7 @@ sh " mvn  -f Spring/pom.xml clean install sonar:sonar -Dsonar.projectKey=test -D
 }}
 stage('Building image docker-compose') {
           steps {
+          sh "npm --prefix /Angular/ install"
           sh "npm --prefix /Angular/ run build --watch=true"
               sh "docker-compose up -d"
               sh "docker-compose stop"
