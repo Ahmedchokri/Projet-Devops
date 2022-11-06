@@ -44,13 +44,13 @@ stage('Deploy our image') {
      }
 stage('pull and run app') {
               steps {
-                  sh "docker-compose -f Spring/docker-compose.yml up --no-start   "
+                  sh "docker-compose -f Spring/docker-compose.yml up  "
               }
               }
 stage('Cleaning up') {
          steps {
-            sh "docker rmi -f uu_app"
-            sh "docker rmi -f uu_frontend"
+            sh "docker rmi -f uu_app_1"
+            sh "docker rmi -f uu_frontend_1"
          }
      }
      stage("Email"){
