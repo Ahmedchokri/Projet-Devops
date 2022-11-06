@@ -44,7 +44,7 @@ stage('Deploy our image') {
      }
 stage('pull and run app') {
               steps {
-                  sh "docker-compose up -d -f Spring/docker-compose.yml "
+                  sh "docker-compose -f Spring/docker-compose.yml up --no-start   "
               }
               }
 stage('Cleaning up') {
