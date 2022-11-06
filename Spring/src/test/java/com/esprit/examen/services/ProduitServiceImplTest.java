@@ -1,6 +1,5 @@
 package com.esprit.examen.services;
 
-import static org.hamcrest.CoreMatchers.any;
 import static org.junit.Assert.*;
 
 import java.text.ParseException;
@@ -9,22 +8,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.mockito.Spy;
-import org.mockito.junit.MockitoJUnit;
+
 import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.junit.MockitoRule;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,9 +24,7 @@ import com.esprit.examen.entities.Produit;
 import com.esprit.examen.entities.Stock;
 import com.esprit.examen.repositories.StockRepository;
 
-import lombok.extern.slf4j.Slf4j;
 @RunWith(MockitoJUnitRunner.class)
-@Slf4j
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class ProduitServiceImplTest {
@@ -86,7 +76,6 @@ public class ProduitServiceImplTest {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date dateCreation = dateFormat.parse("10/06/2005");
 		Date dateDerniereModification = dateFormat.parse("20/03/2011");
-		Date dateNaissance = dateFormat.parse("30/09/2000");
 		Produit p = new Produit("ABCD","A145S",150,dateCreation,dateDerniereModification);
 		Produit produit = produitService.addProduit(p);
 		produitService.deleteProduit(produit.getIdProduit());
