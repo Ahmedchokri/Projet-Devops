@@ -22,7 +22,7 @@ sh " mvn -f Spring/pom.xml clean package deploy:deploy-file -DgroupId=com.esprit
 }}
 stage("Sonar") {
 steps {
-sh " mvn  -f Spring/pom.xml clean install sonar:sonar -Dsonar.projectKey=test -Dsonar.host.url=http://192.168.100.170:9000 -Dsonar.login=deadd25fab00777ef14b0a4bbc057b3a8921f4d6"
+sh " mvn  -f Spring/pom.xml clean install sonar:sonar -Dsonar.projectKey=test -Dsonar.host.url=http://192.168.100.170:9000 -Dsonar.login=5c0ac4d3a2f3c05d06ffc0b0a340c0209052cabe"
 
 
 }}
