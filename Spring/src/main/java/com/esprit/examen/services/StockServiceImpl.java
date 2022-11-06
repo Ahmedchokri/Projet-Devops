@@ -18,10 +18,6 @@ public class StockServiceImpl implements IStockService {
 
 
 
-	public StockServiceImpl(StockRepository stockRepository) {
-		super();
-		this.stockRepository = stockRepository;
-	}
 
 	@Override
 	public List<Stock> retrieveAllStocks() {
@@ -61,7 +57,7 @@ public class StockServiceImpl implements IStockService {
 	public Stock retrieveStock(Long stockId) {
 		long start = System.currentTimeMillis();
 		log.info("In method retrieveStock");
-		Stock stock = this.stockRepository.findById(stockId).get();
+		Stock stock = stockRepository.findById(stockId).orElse(null);
 		log.info("out of method retrieveStock");
 		 long elapsedTime = System.currentTimeMillis() - start;
 		log.info("Method execution time: " + elapsedTime + " milliseconds.");
