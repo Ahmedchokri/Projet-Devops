@@ -30,6 +30,7 @@ stage('Building image docker-compose') {
           steps {
           sh "npm --prefix /Angular/ run build --watch=true"
               sh "docker-compose up -d"
+              sh "docker-compose stop"
           }
       }
 stage('Deploy our image') {
