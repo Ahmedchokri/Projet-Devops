@@ -33,6 +33,10 @@
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-log4j2</artifactId>
+</dependency>
 
 
 		<dependency>

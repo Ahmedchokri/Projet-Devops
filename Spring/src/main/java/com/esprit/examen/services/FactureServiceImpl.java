@@ -16,7 +16,9 @@ import com.esprit.examen.repositories.FactureRepository;
 import com.esprit.examen.repositories.FournisseurRepository;
 import com.esprit.examen.repositories.OperateurRepository;
 import com.esprit.examen.repositories.ProduitRepository;
+
 import lombok.extern.slf4j.Slf4j;
+
 
 @Service
 @Slf4j
@@ -39,9 +41,7 @@ public class FactureServiceImpl implements IFactureService {
 	@Override
 	public List<Facture> retrieveAllFactures() {
 		List<Facture> factures = (List<Facture>) factureRepository.findAll();
-		for (Facture facture : factures) {
-			log.info(" facture : " + facture);
-		}
+		
 		return factures;
 	}
 

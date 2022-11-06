@@ -16,8 +16,6 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class SecteurActivite implements Serializable{
 	/**
 	 * 
@@ -31,4 +29,86 @@ public class SecteurActivite implements Serializable{
 	@ManyToMany(mappedBy="secteurActivites")
 	@JsonIgnore
 	private Set<Fournisseur> fournisseurs;
+	
+	
+	
+
+	public SecteurActivite() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
+	public SecteurActivite(Long idSecteurActivite, String codeSecteurActivite, String libelleSecteurActivite,
+			Set<Fournisseur> fournisseurs) {
+		super();
+		this.idSecteurActivite = idSecteurActivite;
+		this.codeSecteurActivite = codeSecteurActivite;
+		this.libelleSecteurActivite = libelleSecteurActivite;
+		this.fournisseurs = fournisseurs;
+	}
+
+
+
+
+	public Long getIdSecteurActivite() {
+		return idSecteurActivite;
+	}
+
+
+
+
+	public void setIdSecteurActivite(Long idSecteurActivite) {
+		this.idSecteurActivite = idSecteurActivite;
+	}
+
+
+
+
+	public String getCodeSecteurActivite() {
+		return codeSecteurActivite;
+	}
+
+
+
+
+	public void setCodeSecteurActivite(String codeSecteurActivite) {
+		this.codeSecteurActivite = codeSecteurActivite;
+	}
+
+
+
+
+	public String getLibelleSecteurActivite() {
+		return libelleSecteurActivite;
+	}
+
+
+
+
+	public void setLibelleSecteurActivite(String libelleSecteurActivite) {
+		this.libelleSecteurActivite = libelleSecteurActivite;
+	}
+
+
+
+
+	public Set<Fournisseur> getFournisseurs() {
+		return fournisseurs;
+	}
+
+
+
+
+	public void setFournisseurs(Set<Fournisseur> fournisseurs) {
+		this.fournisseurs = fournisseurs;
+	}
+
+
+
+
+
+	
 }
