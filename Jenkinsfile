@@ -47,7 +47,6 @@ stage('pull and run app') {
                   sh "docker-compose up -d -f /Spring/docker-compose.yml "
               }
               }
-          }
 stage('Cleaning up') {
          steps {
             sh "docker rmi -f uu_app"
@@ -59,4 +58,5 @@ stage('Cleaning up') {
                emailext attachLog: true, body: "${env.BUILD_URL} has result ${currentBuild.result}", compressLog: true, subject: "Status of pipeline: ${currentBuild.fullDisplayName}", to: 'ahmed.chokri@esprit.tn'
            }
        }
+}
 }
