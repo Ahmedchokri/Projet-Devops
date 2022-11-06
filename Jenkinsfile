@@ -41,9 +41,15 @@ stage('Deploy our image') {
               sh "docker push ahmedchokri/uu_frontend:uu_frontend"
          }}
      }
+stage('pull and run app') {
+              steps {
+                  sh "docker-compose up -d -f /Spring/docker-compose.yml "
+              }
+              }
+          }
 stage('Cleaning up') {
          steps {
-            sh "docker rmi -f uu_app" 
+            sh "docker rmi -f uu_app"
             sh "docker rmi -f uu_frontend"
          }
      }
