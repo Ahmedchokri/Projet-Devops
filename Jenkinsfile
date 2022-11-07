@@ -17,7 +17,7 @@ sh " mvn -f  Spring/pom.xml test"
 }}
 stage("Nexus") {
 steps {
-sh " mvn -f Spring/pom.xml clean package deploy:deploy-file -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=0.0.1-SNAPSHOT -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.0.10:8082/repository/maven-snapshots/ -Dfile=target/tpAchatProject-0.0.1-SNAPSHOT.jar"
+sh " mvn -f Spring/pom.xml clean package deploy:deploy-file -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=0.0.1-SNAPSHOT -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.0.10:8081/repository/maven-snapshots/ -Dfile=target/tpAchatProject-0.0.1-SNAPSHOT.jar"
 
 }}
 stage("Sonar") {
