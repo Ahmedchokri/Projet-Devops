@@ -18,10 +18,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Facture implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -44,5 +40,136 @@ public class Facture implements Serializable {
     @JsonIgnore
     private Set<Reglement> reglements;
 
+     public Facture() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public Facture(float montantRemise, float montantFacture, Date dateCreationFacture, Date dateDerniereModificationFacture, Boolean archivee, Set<DetailFacture> detailsFacture, Fournisseur fournisseur, Set<Reglement> reglements) {
+		this.montantRemise = montantRemise;
+		this.montantFacture = montantFacture;
+		this.dateCreationFacture = dateCreationFacture;
+		this.dateDerniereModificationFacture = dateDerniereModificationFacture;
+		this.archive = archive;
+		this.detailsFacture = detailsFacture;
+		this.fournisseur = fournisseur;
+		this.reglements = reglements;
+    }
+
+
+
+	public Long getIdFacture() {
+		return idFacture;
+	}
+
+
+
+	public void setIdFacture(Long idFacture) {
+		this.idFacture = idFacture;
+	}
+
+
+
+	public float getMontantRemise() {
+		return montantRemise;
+	}
+
+
+
+	public void setMontantRemise(float montantRemise) {
+		this.montantRemise = montantRemise;
+	}
+
+
+
+	public float getMontantFacture() {
+		return montantFacture;
+	}
+
+
+
+	public void setMontantFacture(float montantFacture) {
+		this.montantFacture = montantFacture;
+	}
+
+
+
+	public Date getDateCreationFacture() {
+		return dateCreationFacture;
+	}
+
+
+
+	public void setDateCreationFacture(Date dateCreationFacture) {
+		this.dateCreationFacture = dateCreationFacture;
+	}
+
+
+
+	public Date getDateDerniereModificationFacture() {
+		return dateDerniereModificationFacture;
+	}
+
+
+
+	public void setDateDerniereModificationFacture(Date dateDerniereModificationFacture) {
+		this.dateDerniereModificationFacture = dateDerniereModificationFacture;
+	}
+
+
+
+	public Boolean getArchive() {
+		return archive;
+	}
+
+
+
+	public void setArchive(Boolean archive) {
+		this.archive = archive;
+	}
+
+
+
+	public Set<DetailFacture> getDetailsFacture() {
+		return detailsFacture;
+	}
+
+
+
+	public void setDetailsFacture(Set<DetailFacture> detailsFacture) {
+		this.detailsFacture = detailsFacture;
+	}
+
+
+
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
+
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+	}
+
+
+
+	public Set<Reglement> getReglements() {
+		return reglements;
+	}
+
+
+
+	public void setReglements(Set<Reglement> reglements) {
+		this.reglements = reglements;
+	}
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	
 }

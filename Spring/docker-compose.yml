@@ -1,4 +1,3 @@
-
 version: "2.2"
 
 services:
@@ -13,9 +12,9 @@ services:
     volumes:
       - db:/var/lib/mysql
   app:
+    image: zaghdoudiahmed/ahmedzaghdoudi2_app:ahmedzg
     depends_on:
       - mysqldb
-    build: "Spring"
     restart: on-failure
     ports:
       - "8089:8089"
@@ -31,4 +30,3 @@ services:
     tty: true
 volumes:
   db:
- 
